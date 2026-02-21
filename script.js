@@ -1,0 +1,1 @@
+console.log("Assignment-04 project is setup successfully!");
