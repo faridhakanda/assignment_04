@@ -26,27 +26,93 @@
         <div class="flex list-none space-x-3 mx-auto justify-center">
             <li class="bg-[#FFFFFF] shadow-sm w-[370px] p-3 rounded-lg">
                 <h2 class="text-[14px] font-medium text-[#323B49]">Total</h2>
-                <p class="text-[24px] font-bold">8</p>
+                <p id="allJobCount" class="text-[24px] font-bold">0</p>
             </li>
             <li class="bg-[#FFFFFF] shadow-sm w-[370px] p-3 rounded-lg">
                 <h2 class="text-[14px] font-medium text-[#323B49]">Interview</h2>
-                <p class="text-[24px] font-bold text-[#10B981]">0</p>
+                <p id="interviewJobCount" class="text-[24px] font-bold text-[#10B981]">10</p>
             </li>
             <li class="bg-[#FFFFFF] shadow-sm w-[370px] p-3 rounded-lg">
                 <h2 class="text-[14px] font-medium text-[#323B49]">Rejected</h2>
-                <p class="text-[24px] font-bold text-[#EF4444]">0</p>
+                <p id="rejectedJobCount" class="text-[24px] font-bold text-[#EF4444]">10</p>
             </li>
         </div>
     </header>
     <hr class="border-gray-300 shadow-sm">
-    <main class="mt-8">
+    <main id="container" class="mt-8">
         <section>
-            <h2 class="mb-5 p-2 text-[18px] font-semibold">Available Jobs</h2>
-            <div class="list-none flex space-x-2">
-                <li class="bg-[#F8FAFC] shadow-sm text-[#64748B] text-[14px] font-medium p-[2px] w-[60px] rounded-md text-center"><button>All</button></li>
-                <li class=" bg-[#FFFFFF] shadow-sm text-[#64748B] text-[14px] font-medium p-[2px] w-[90px] rounded-md text-center"><button>Interview</button></li>
-                <li class=" bg-[#FFFFFF] shadow-sm text-[#64748B] text-[14px] font-medium p-[2px] w-[90px] rounded-md text-center"><button>Rejected</button></li>
+            <div class="flex justify-between items-center">
+                <h2 class="mb-5 p-2 text-[18px] font-semibold">Available Jobs</h2>
+                <p class="text-[#64748B]"><span id="jobs">8</span> jobs</p>
             </div>
+            <div class="list-none flex space-x-2">
+                <button id="allJobBtn"  onclick="showOnly('alljobs')" class="cursor-pointer bg-[#261CC1] text-[#F8FAFC]  shadow-sm  text-[14px] font-medium p-[2px] w-[60px] rounded-md text-center">All</button>
+                <button id="interviewJobBtn" onclick="showOnly('interviews')" class="cursor-pointer bg-[#F8FAFC] text-[#64748B] shadow-sm  text-[14px] font-medium p-[2px] w-[90px] rounded-md text-center">Interview</button>
+                <button id="rejectedJobBtn" onclick="showOnly('rejected')" class="cursor-pointer bg-[#F8FAFC] text-[#64748B] shadow-sm  text-[14px] font-medium p-[2px] w-[90px] rounded-md text-center">Rejected</button>
+            </div>
+            
+        </section>
+        
+        <section id="alljobs" class="mt-6 mb-10 space-y-4">
+            <div id="notAvailableJob" class="bg-[#F8FAFC] shadow p-16 flex-col text-center rounded-lg space-y-5 my-8">
+                <img class='mx-auto' src="./jobs.png" alt="">
+                <h2 class="text-[#002C5C] text-[24px] font-semibold ">No Jobs available</h2>
+                <p class="text-[#64738B]">Check back soon for new job opportunities</p>
+            </div>
+            <div class="bg-[#F8FAFC] shadow p-3 rounded-lg space-y-1 card interview rejected">
+                <h2 class="text-[#002C5C] text-[18px] font-semibold flex justify-between"><span>Mobile First Corp</span><button id="delete-btn" class=" cursor-pointer w-[32px] h-[32px] flex items-center justify-center rounded-full border-1 border-[#F1F2F4] shadow-sm"><i class="fa-regular fa-trash-can"></i></button></h2>
+                <p class="text-[#64748B]">React Native Developer</p>
+                <p class="text-[#64738B]">Remote - Full-time - $130,000-$175,000</p>
+                <p class="bg-[#EEF4FF] shadow-sm p-1 rounded-md w-[120px] text-center text-[#002C5C]">NOT APPLIED</p>
+                <p class="text-[#323B49]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <button class="cursor-pointer border-2 border-green-300 p-[5px] rounded-md text-[#10B981] font-semibold text-[14px]">INTERVIEW</button>
+                <button class="cursor-pointer border-2 border-red-600 p-[5px] rounded-md text-[#EF4444] font-semibold text-[14px]">REJECTED</button>
+            </div>
+            <div class="bg-[#F8FAFC] shadow p-3 rounded-lg space-y-1 card interview rejected">
+                <h2 class="text-[#002C5C] text-[18px] font-semibold flex justify-between"><span>Mobile First Corp</span><button id="delete-btn" class="cursor-pointer w-[32px] h-[32px] flex items-center justify-center rounded-full border-1 border-[#F1F2F4] shadow-sm"><i class="fa-regular fa-trash-can"></i></button></h2>
+                <p class="text-[#64748B]">React Native Developer</p>
+                <p class="text-[#64738B]">Remote - Full-time - $130,000-$175,000</p>
+                <p class="bg-[#EEF4FF] shadow-sm p-1 rounded-md w-[120px] text-center text-[#002C5C]">NOT APPLIED</p>
+                <p class="text-[#323B49]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <button class="cursor-pointer border-2 border-green-300 p-[5px] rounded-md text-[#10B981] font-semibold text-[14px]">INTERVIEW</button>
+                <button class="cursor-pointer border-2 border-red-600 p-[5px] rounded-md text-[#EF4444] font-semibold text-[14px]">REJECTED</button>
+            </div>
+            
+            
+        </section>
+        <section id="interviews" class="my-3 hidden">
+            <div id="noInterviewCard" class="bg-[#F8FAFC] shadow p-16 flex-col text-center rounded-lg space-y-5 my-8">
+                <img class='mx-auto' src="./jobs.png" alt="">
+                <h2 class="text-[#002C5C] text-[24px] font-semibold ">No Jobs available in Interview</h2>
+                <p class="text-[#64738B]">Check back soon for new job opportunities</p>
+            </div>
+            <div class="bg-[#F8FAFC] shadow p-3 rounded-lg space-y-1 card interview rejected">
+                <h2 class="text-[#002C5C] text-[18px] font-semibold flex justify-between"><span>Mobile First Corp</span><button id="delete-btn" class="cursor-pointer w-[32px] h-[32px] flex items-center justify-center rounded-full border-1 border-[#F1F2F4] shadow-sm"><i class="fa-regular fa-trash-can"></i></button></h2>
+                <p class="text-[#64748B]">React Native Developer</p>
+                <p class="text-[#64738B]">Remote - Full-time - $130,000-$175,000</p>
+                <p class="bg-[#EEF4FF] shadow-sm p-1 rounded-md w-[120px] text-center text-[#002C5C]">NOT APPLIED</p>
+                <p class="text-[#323B49]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <button class="cursor-pointer border-2 border-green-300 p-[5px] rounded-md text-[#10B981] font-semibold text-[14px]">INTERVIEW</button>
+                <button class="cursor-pointer border-2 border-red-600 p-[5px] rounded-md text-[#EF4444] font-semibold text-[14px]">REJECTED</button>
+            </div>
+
+        </section>
+        <section id="rejected" class="my-3 hidden">
+           <div id="noRejectedCard"  class="bg-[#F8FAFC] shadow p-16 flex-col text-center rounded-lg space-y-5 my-8">
+                <img class='mx-auto' src="./jobs.png" alt="">
+                <h2 class="text-[#002C5C] text-[24px] font-semibold ">No Jobs available in Rejected</h2>
+                <p class="text-[#64738B]">Check back soon for new job opportunities</p>
+            </div>
+            <div class="bg-[#F8FAFC] shadow p-3 rounded-lg space-y-1 card interview rejected">
+                <h2 class="text-[#002C5C] text-[18px] font-semibold flex justify-between"><span>Mobile First Corp</span><button id="delete-btn" class="cursor-pointer w-[32px] h-[32px] flex items-center justify-center rounded-full border-1 border-[#F1F2F4] shadow-sm"><i class="fa-regular fa-trash-can"></i></button></h2>
+                <p class="text-[#64748B]">React Native Developer</p>
+                <p class="text-[#64738B]">Remote - Full-time - $130,000-$175,000</p>
+                <p class="bg-[#EEF4FF] shadow-sm p-1 rounded-md w-[120px] text-center text-[#002C5C]">NOT APPLIED</p>
+                <p class="text-[#323B49]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <button class="cursor-pointer border-2 border-green-300 p-[5px] rounded-md text-[#10B981] font-semibold text-[14px]">INTERVIEW</button>
+                <button class="cursor-pointer border-2 border-red-600 p-[5px] rounded-md text-[#EF4444] font-semibold text-[14px]">REJECTED</button>
+            </div>
+            
         </section>
     </main>
     
