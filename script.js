@@ -22,8 +22,10 @@ let rejectBtn = document.getElementById('reject');
 
 function calculationCard() {
     const jobsCard = document.querySelectorAll('#alljobs .card');
-    const interviewCard = document.querySelectorAll('#interviews .interview');
-    const rejectCard = document.querySelectorAll('#rejected .rejected');
+    // const interviewCard = document.querySelectorAll('#interviews .interview');
+    // const rejectCard = document.querySelectorAll('#rejected .rejected');
+    const interviewCard = document.querySelectorAll('#interviews .card');
+    const rejectCard = document.querySelectorAll('#rejected .card');
 
     const jobs = jobsCard.length;
     const interview = interviewCard.length;
@@ -119,12 +121,14 @@ function showOnly(id) {
 
 
 // const container = document.getElementById('alljobs');
-// const container = document.getElementById('container');
-console.log("Length is: ", container.length);
+const container = document.getElementById('container');
+// console.log("Length is: ", container.length);
 container.addEventListener('click', function(event) {
-    const deleteBtn = event.target.closest('#delete-btn');
+    const deleteBtn = event.target.closest('.delete-btn');
     if (deleteBtn) {
         const cardToDelete = deleteBtn.closest('.card');
+        // const interviewCard = deleteBtn.closest('.interview');
+        // const rejectedCard = deleteBtn.closest('.rejected');
         if (cardToDelete) {
             cardToDelete.remove();
             calculationCard();
