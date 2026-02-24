@@ -13,7 +13,7 @@
 ## ans: Event bubbling is javascript behavior where is work first go deep dive and when after it come it's initial position the following way first it's come it's last node's parent node then it's parent node and finally it's come initial node which is the root parent of all child node.
 
 ### 4. What is Event Delegation in JavaScript? Why is it useful?
-## ans: 
+## ans: event delegation is prevent to adding event in same multiple child element. it is useful when need interact any of single event.
 
 ### 5. What is the difference between preventDefault() and stopPropagation() methods?
 ## ans: 
