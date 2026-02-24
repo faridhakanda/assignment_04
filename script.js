@@ -1,21 +1,5 @@
 console.log("Assignment-04 project is setup successfully!");
 
-// let allButton = document.getElementById("alls");
-// let interviewButton = document.getElementById("interviews");
-// let rejectedButton = document.getElementById("rejected");
-
-// const jobCardLength = document.querySelectorAll("#alljobs .card");
-// const totalJobCount = document.getElementById("totalJobCount");
-// const jobsLength = jobCardLength.length;
-// totalJobCount.innerText = jobsLength;
-
-// const noJobs = document.getElementById('notAvailableJob');
-// if (jobsLength > 0) {
-//     noJobs.classList.add("hidden");
-// }
-// else {
-//     noJobs.classList.remove("hidden");
-// }
 
 
 
@@ -81,25 +65,6 @@ function calculationCard() {
 
 calculationCard();
 
-// for interviews jobs
-// const interview = document.querySelectorAll('#interviews .interview');
-// const interviewJobCount = document.getElementById('interviewJobCount');
-// const interviewLength = interview.length;
-// interviewJobCount.innerText = interviewLength;
-// const noInterviewCard = document.getElementById('noInterviewCard');
-// if (interviewLength > 0) {
-//     noInterviewCard.classList.add("hidden");
-// }
-
-// // for rejected interviews jobs 
-// const rejected = document.querySelectorAll('#rejected .rejected');
-// const rejectedJobCount = document.getElementById('rejectedJobCount');
-// const noRejectedCard = document.getElementById('noRejectedCard');
-// const rejectedLength = rejected.length;
-// rejectedJobCount.innerText = rejectedLength;
-// if (rejectedLength > 0) {
-//     noRejectedCard.classList.add("hidden");
-// }
 
 
 
@@ -110,19 +75,6 @@ let rejected = document.getElementById("rejected");
 const activeAllJobButton = document.getElementById("allJobBtn");
 const interviewJobButton = document.getElementById("interviewJobBtn");
 const rejectedJobButton = document.getElementById("rejectedJobBtn");
-
-
-// activeAllJobButton.classList.add('bg-[#F8FAFC', 'text-[#64748B]');
-// activeAllJobButton.classList.add('bg-[#261CC1', 'text-[#F8FAFC]');
-
-// bg-[#F8FAFC] text-[#64748B]
-
-
-
-
-
-
-
 
 
 
@@ -167,7 +119,7 @@ function showOnly(id) {
 
 
 // const container = document.getElementById('alljobs');
-const container = document.getElementById('container');
+// const container = document.getElementById('container');
 console.log("Length is: ", container.length);
 container.addEventListener('click', function(event) {
     const deleteBtn = event.target.closest('#delete-btn');
