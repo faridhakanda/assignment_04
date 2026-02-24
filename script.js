@@ -30,14 +30,14 @@ function calculationCard() {
     const jobs = jobsCard.length;
     const interview = interviewCard.length;
     const rejected = rejectCard.length;
-
+    
     const total = document.getElementById('allJobCount');
     const availableJobs = document.getElementById('jobs');
     const interviews = document.getElementById('interviewJobCount');
     const rejects = document.getElementById('rejectedJobCount');
     
     
-
+    
     total.innerText = jobs;
     availableJobs.innerText = jobs;
     interviews.innerText = interview;
@@ -49,14 +49,14 @@ function calculationCard() {
     } else {
         noAllJobs.classList.remove("hidden");
     }
-
+    
     const noInterviewCard = document.getElementById('noInterviewCard');
     if (interview > 0) {
         noInterviewCard.classList.add("hidden");
     } else {
         noInterviewCard.classList.remove("hidden");
     }
-
+    
     const noRejectedCard = document.getElementById('noRejectedCard');
     if (rejected > 0) {
         noRejectedCard.classList.add("hidden");
@@ -120,21 +120,49 @@ function showOnly(id) {
 
 
 
-// const container = document.getElementById('alljobs');
+
+
+// interview, rejected and delete button functionality code 
 const container = document.getElementById('container');
-// console.log("Length is: ", container.length);
 container.addEventListener('click', function(event) {
-    const deleteBtn = event.target.closest('.delete-btn');
+    const deleteBtn = event.target.closest('#delete-btn');
+    const interviewBtn = event.target.closest('#interviewBtn');
+    const rejectedBtn = event.target.closest("#rejectedBtn");
+    
+    
+    const interviewDiv = document.getElementById('interviews');
+    const rejectedDiv = document.getElementById('rejected')
     if (deleteBtn) {
         const cardToDelete = deleteBtn.closest('.card');
-        // const interviewCard = deleteBtn.closest('.interview');
-        // const rejectedCard = deleteBtn.closest('.rejected');
         if (cardToDelete) {
             cardToDelete.remove();
             calculationCard();
             console.log("click in delete button!");
         }
+    } else if (interviewBtn) {
+        const interviewCard = event.target.closest('.card');
+        if (interviewCard) {
+            //const originalCard = interviewCard.cloneNode(true);
+            const statusText = interviewCard.querySelector('.status');
+            statusText.innerText = "INTERVIEWED";
+            statusText.classList.add('text-[#10B981]', 'font-semibold');
+            const originalCard = interviewCard.cloneNode(true);
+            interviewDiv.append(originalCard);
+            calculationCard();
+            console.log("child is added in interview div!");
+        }  
+    } else if (rejectedBtn) {
+        const rejectedCard = event.target.closest('.card');
+        if (rejectedCard) {
+            //const originalCard = rejectedCard.cloneNode(true);
+            const statusText = rejectedCard.querySelector('.status');
+            statusText.innerText = "REJECTED";
+            statusText.classList.add('text-[#EF4444]', 'font-semibold');
+            const originalCard = rejectedCard.cloneNode(true);
+            rejectedDiv.append(originalCard);
+            calculationCard();
+            console.log("child is added in rejected div!");
+        }  
     }
 });
 
-    
